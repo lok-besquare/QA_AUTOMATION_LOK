@@ -16,6 +16,8 @@ ${trade_scope}       //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/d
 ${payments_scope}       //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[1]/div[2]/div/div/div/div[3]
 ${admin_scope}       //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[1]/div[2]/div/div/div/div[4]
 ${trading_information}       //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[1]/div[2]/div/div/div/div[5]
+${input_bar}            //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input
+${create_button}         //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
 ${token_name_with_spacebar}         a b b
 ${empty_value}
 
