@@ -2,9 +2,6 @@
 Documentation    Suite description
 Library     SeleniumLibrary
 
-
-
-
 *** Keywords ***
 Login
     [arguments]     ${email_field}    ${password_field}
@@ -81,3 +78,58 @@ ClearInputField
     # sometimes text cursor starts from the middle, so delete front and back characters
     Repeat Keyword    ${value_length}    Press Keys    ${input_field}   BACKSPACE
     Repeat Keyword    1   Press Keys    ${input_field}   DELETE
+
+
+
+#API_TOKEN_PAGE
+GotoSettingPage
+    wait until page contains element    ${go_to_setting_page}   10
+    sleep   5
+    click element       ${go_to_setting_page}
+    wait until page contains element    ${go_to_api_token}      10
+    click element       ${go_to_api_token}
+TokenCreateWithOneScope
+    wait until page contains element    ${api_token_page}     10
+    click element       ${read_scope}
+    input text  //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input      lok123?
+    click element       //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
+    sleep  10
+    clearinputfield         //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input
+    input text  //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input      a
+    click element       //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
+    sleep  10
+    clearinputfield         //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input
+    input text  //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    click element       //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
+    sleep  10
+    clearinputfield         //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input
+    input text  //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input      ${token_name_with_spacebar}
+    click element       //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
+    sleep  10
+    click element       ${read_scope}
+    click element       ${trade_scope}
+    clearinputfield         //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input
+    input text  //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input      AbcD
+    click element       //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
+    sleep  10
+    click element       ${read_scope}
+    click element       ${trade_scope}
+    clearinputfield         //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input
+    input text  //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input      Abcd1234
+    click element       //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
+    sleep  10
+    clearinputfield         //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input
+    input text  //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input      NoScopeSelected
+    click element       //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
+    sleep  10
+    click element       ${read_scope}
+    clearinputfield         //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input
+    input text  //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input      ${empty_value}
+    click element       //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
+
+
+
+#
+#input text  //*[@id="app_contents"]/div/div/div/div/div[2]/div/div[2]/div/section/div/div/form/div/div[2]/div[2]/div/div/div/div/input      lok123
+#    click element       //button[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large da-api-token__button"]
+

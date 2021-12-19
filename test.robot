@@ -34,8 +34,6 @@ ${syntehtic_50_option}       //div[@class="sc-mcd__category sc-mcd__category--sy
 ${pick_multipier}        //div[@class="dc-vertical-tab__content-container"]/div//div[@class="contract-type-list__wrapper"]
 ${current_value}
 ${value_length}
-*** Keyword ***
-
 
 *** Test Cases ***
 Login
